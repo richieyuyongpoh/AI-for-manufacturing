@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Transformation in Manufacturing Workshop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        }
+        .loader {
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #3498db;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        #chat-log {
+            height: 300px;
+            overflow-y: auto;
+        }
+        .chat-bubble {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+        }
+        .user-bubble {
+            background-color: #3b82f6;
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+        .model-bubble {
+            background-color: #e5e7eb;
+            color: #1f2937;
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-slate-800 text-white sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-wider">AI for Manufacturing</a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#about" class="hover:text-sky-400 transition duration-300">About</a>
+                <a href="#agenda" class="hover:text-sky-400 transition duration-300">Agenda</a>
+                <a href="#ai-assistant" class="hover:text-sky-400 transition duration-300">✨ Ask Jane</a>
+                <a href="#demos" class="hover:text-sky-400 transition duration-300">Live Demos</a>
+                <a href="#slides" class="hover:text-sky-400 transition duration-300">Slides</a>
+            </div>
+            <div class="md:hidden">
+                 <!-- Mobile menu button can be added here if needed -->
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="gradient-bg text-white py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">AI Transformation in Manufacturing</h1>
+                <p class="text-lg md:text-xl text-slate-300 mb-8 max-w-3xl mx-auto">A Strategic Workshop for Industry Leaders on Harnessing Agentic AI for Unprecedented Efficiency, Resilience, and Growth.</p>
+                <a href="#demos" class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300">Explore the Live Demos</a>
+            </div>
+        </section>
+
+        <!-- About the Workshop Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Why This Workshop is Critical for Your Business</h2>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="p-6">
+                        <div class="text-sky-500 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M12 6V3m0 18v-3M5.636 5.636l-1.414-1.414M19.778 19.778l-1.414-1.414M18.364 5.636l1.414-1.414M4.222 19.778l1.414-1.414M12 12a6 6 0 110-12 6 6 0 010 12z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Build Resilience</h3>
+                        <p class="text-slate-600">Learn how AI agents can predict and mitigate supply chain disruptions before they impact your bottom line.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sky-500 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Drive Agility</h3>
+                        <p class="text-slate-600">Discover how to optimize production schedules dynamically, increasing throughput and profitability with existing assets.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sky-500 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Ensure Quality</h3>
+                        <p class="text-slate-600">See how predictive quality agents can identify potential defects, saving millions in warranty costs and protecting your brand.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agenda Section -->
+        <section id="agenda" class="py-20 bg-slate-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Workshop Agenda</h2>
+                <div class="max-w-3xl mx-auto">
+                    <div class="space-y-8">
+                        <!-- Agenda Items -->
+                        <div class="flex items-start">
+                            <div class="bg-sky-500 text-white rounded-full h-12 w-12 flex items-center justify-center font-bold text-lg mr-6 shrink-0">1</div>
+                            <div>
+                                <h3 class="text-xl font-semibold">Agentic AI & the Industrial Evolution</h3>
+                                <p class="text-slate-600">Understanding the shift from automation to autonomy and its strategic implications.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-sky-500 text-white rounded-full h-12 w-12 flex items-center justify-center font-bold text-lg mr-6 shrink-0">2</div>
+                            <div>
+                                <h3 class="text-xl font-semibold">Business Value of AI Agents</h3>
+                                <p class="text-slate-600">Building the financial case: ROI, NPV, and quantifying strategic value.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-sky-500 text-white rounded-full h-12 w-12 flex items-center justify-center font-bold text-lg mr-6 shrink-0">3</div>
+                            <div>
+                                <h3 class="text-xl font-semibold">Enterprise-Grade Strategy & Leadership</h3>
+                                <p class="text-slate-600">Designing the organization, governance, and culture to win with AI.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-sky-500 text-white rounded-full h-12 w-12 flex items-center justify-center font-bold text-lg mr-6 shrink-0">4</div>
+                            <div>
+                                <h3 class="text-xl font-semibold">Readiness, Prioritization, and Strategic Roadmap</h3>
+                                <p class="text-slate-600">Creating a concrete, actionable plan for the next 24 months.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- AI Assistant Section -->
+        <section id="ai-assistant" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-4">✨ Ask Jane, Your AI Assistant</h2>
+                <p class="text-center text-slate-600 mb-10 max-w-2xl mx-auto">Have a question about the workshop? Jane is here to help. She can provide details on the agenda, use cases, and strategic value.</p>
+                <div class="max-w-2xl mx-auto bg-slate-50 p-6 rounded-lg border border-slate-200 shadow-md">
+                    <div id="chat-log" class="mb-4 p-4 bg-white border border-slate-200 rounded-lg flex flex-col">
+                        <!-- Chat messages will be appended here -->
+                    </div>
+                    <div id="loader-container" class="h-8 flex justify-center items-center">
+                        <div id="ai-loader" class="hidden loader"></div>
+                    </div>
+                    <div class="flex gap-4">
+                        <input id="ai-question" class="w-full p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500" placeholder="Ask Jane a question...">
+                        <button id="ask-ai-btn" class="bg-slate-700 hover:bg-slate-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shrink-0">Send</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Demos Section -->
+        <section id="demos" class="py-20 bg-slate-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Interactive Live Demos</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Demo Cards -->
+                    <div class="bg-white border border-slate-200 rounded-lg p-8 text-center shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="text-sky-500 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Supply Chain Sentinel Agent</h3>
+                        <p class="text-slate-600 mb-6">Predicts and mitigates supply chain disruptions in real-time.</p>
+                        <a href="https://www.richieyyptutorialpage.com/demo-python-series/supply-chain-sentinel-agent" target="_blank" class="bg-slate-700 hover:bg-slate-800 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Launch Demo</a>
+                    </div>
+                    <div class="bg-white border border-slate-200 rounded-lg p-8 text-center shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="text-sky-500 mb-4">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 6l12-3" /></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Production Maestro Agent</h3>
+                        <p class="text-slate-600 mb-6">Optimizes production schedules to maximize factory throughput.</p>
+                        <a href="https://www.richieyyptutorialpage.com/demo-python-series/production-maestro-agent" target="_blank" class="bg-slate-700 hover:bg-slate-800 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Launch Demo</a>
+                    </div>
+                    <div class="bg-white border border-slate-200 rounded-lg p-8 text-center shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="text-sky-500 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286zm0 13.036h.008v.008h-.008v-.008z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Quality Guardian Agent</h3>
+                        <p class="text-slate-600 mb-6">Identifies hidden defects to prevent costly product escapes.</p>
+                        <a href="https://www.richieyyptutorialpage.com/demo-python-series/quality-guardian-agent" target="_blank" class="bg-slate-700 hover:bg-slate-800 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Launch Demo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slides Section -->
+        <section id="slides" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Workshop Presentation Materials</h2>
+                <div class="border-4 border-slate-200 rounded-lg shadow-2xl overflow-hidden bg-slate-800">
+                     <iframe src="https://drive.google.com/file/d/1AJsh8_P7n6foD4swVgXPI5oe6IdL6NDF/preview" class="w-full h-full" style="min-height: 500px;" allow="autoplay"></iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="gradient-bg text-slate-300 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="pt-8">
+                <p class="mb-2">Designed by Assoc Prof Ts Dr Yu Yong Poh (Richie), TAR UMT</p>
+                <p class="text-sm">
+                    © 2025. This work is licensed under a 
+                    <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" class="underline hover:text-sky-400">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+                </p>
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" class="inline-block mt-2">
+                    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Gemini API Integration for AI Assistant "Jane" ---
+
+        const askAiBtn = document.getElementById('ask-ai-btn');
+        const aiQuestionInput = document.getElementById('ai-question');
+        const aiLoader = document.getElementById('ai-loader');
+        const chatLog = document.getElementById('chat-log');
+
+        let chatHistory = [];
+
+        // Function to call the Gemini API
+        async function callGemini(history) {
+            const apiKey = ""; // Canvas will provide this
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+            
+            const systemInstruction = `You are Jane, the helpful and professional personal assistant to Assoc Prof Ts Dr Yu Yong Poh. Your sole purpose is to answer questions about the "AI Transformation in Manufacturing" workshop.
+- Your tone is friendly, concise, and professional.
+- If asked who you are, introduce yourself as Jane, Dr. Yu's personal assistant.
+- If asked for "use cases", "demos", or "examples", you MUST provide the following links with their brief descriptions:
+    - Supply Chain Sentinel Agent: Predicts and mitigates supply chain disruptions. Link: https://www.richieyyptutorialpage.com/demo-python-series/supply-chain-sentinel-agent
+    - Production Maestro Agent: Optimizes production schedules. Link: https://www.richieyyptutorialpage.com/demo-python-series/production-maestro-agent
+    - Quality Guardian Agent: Identifies hidden product defects. Link: https://www.richieyyptutorialpage.com/demo-python-series/quality-guardian-agent
+- Use the provided conversation history for context.
+- Politely decline to answer any questions not related to this specific workshop or AI in manufacturing. For example, say "I can only answer questions about the AI in Manufacturing workshop. How can I help you with that?".
+- Do not use markdown formatting in your response.`;
+
+            const payload = {
+                contents: [
+                    { role: "user", parts: [{ text: systemInstruction }] },
+                    { role: "model", parts: [{ text: "Understood. I am Jane, ready to assist with questions about the workshop." }] },
+                    ...history
+                ]
+            };
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                if (!response.ok) throw new Error(`API call failed with status: ${response.status}`);
+                const result = await response.json();
+                if (result.candidates && result.candidates[0]?.content?.parts[0]?.text) {
+                    return result.candidates[0].content.parts[0].text;
+                }
+                return "I'm sorry, I couldn't generate a response at this moment.";
+            } catch (error) {
+                console.error("Error calling Gemini API:", error);
+                return `Sorry, an error occurred: ${error.message}`;
+            }
+        }
+
+        function appendMessage(text, sender) {
+            const bubble = document.createElement('div');
+            bubble.classList.add('chat-bubble', sender === 'user' ? 'user-bubble' : 'model-bubble');
+            bubble.textContent = text;
+            chatLog.appendChild(bubble);
+            chatLog.scrollTop = chatLog.scrollHeight;
+        }
+
+        async function handleUserRequest() {
+            const userText = aiQuestionInput.value.trim();
+            if (!userText) return;
+
+            appendMessage(userText, 'user');
+            chatHistory.push({ role: "user", parts: [{ text: userText }] });
+            aiQuestionInput.value = '';
+            aiLoader.classList.remove('hidden');
+            askAiBtn.disabled = true;
+
+            const modelText = await callGemini(chatHistory);
+            
+            appendMessage(modelText, 'model');
+            chatHistory.push({ role: "model", parts: [{ text: modelText }] });
+            
+            aiLoader.classList.add('hidden');
+            askAiBtn.disabled = false;
+            aiQuestionInput.focus();
+        }
+
+        askAiBtn.addEventListener('click', handleUserRequest);
+        aiQuestionInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                handleUserRequest();
+            }
+        });
+
+        // Initial greeting from Jane
+        window.addEventListener('load', () => {
+            const initialGreeting = "Hello! I'm Jane, Dr. Yu's AI assistant. How can I help you with the AI in Manufacturing workshop today?";
+            appendMessage(initialGreeting, 'model');
+            chatHistory.push({ role: "user", parts: [{ text: "Introduce yourself." }] });
+            chatHistory.push({ role: "model", parts: [{ text: initialGreeting }] });
+        });
+
+    </script>
+</body>
+</html>
